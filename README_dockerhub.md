@@ -2,7 +2,7 @@
 
 This is a simple visualizer for [Kaitai Struct](https://github.com/kaitai-io/kaitai_struct) project.
 
-![screenshot](screenshot.png)
+![screenshot](https://raw.githubusercontent.com/kaitai-io/kaitai_struct_visualizer/87f42c8c1eee97b825a2ff7d00c1370f5a87d050/screenshot.png)
 
 Kaitai Struct is a declarative language used for describe various
 binary data structures, laid out in files or in memory: i.e. binary
@@ -20,9 +20,9 @@ for details on `.ksy` files and general usage patterns.
 
 ## Downloading and installing
 
-### Requirements
+### Requirements _(this Docker image has everything bundled inside)_
 - [ksc](http://kaitai.io/#quick-start) - kaitai-struct-compiler
-- [Java](https://openjdk.java.net/install/) 
+- [Java](https://openjdk.java.net/install/)
 - [Ruby](https://www.ruby-lang.org/)
 
 ### From Ruby Gems repository
@@ -42,9 +42,7 @@ gem install kaitai-struct-visualizer
 If you're interested in developing the visualizer itself, you can check
 out source code in repository:
 
-```shell
-git clone https://github.com/kaitai-io/kaitai_struct_visualizer
-```
+<pre><code>git clone <a href="https://github.com/kaitai-io/kaitai_struct_visualizer">https://github.com/kaitai-io/kaitai_struct_visualizer</a></code></pre>
 
 ## Usage
 
