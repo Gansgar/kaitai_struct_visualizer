@@ -91,8 +91,10 @@ module Kaitai::Struct::Visualizer
       pos = 2 * level + 4 + @id.length
 
       if open? || !openable?
-        if @value.is_a?(Float) || @value.is_a?(Integer)
+        if @value.is_a?(Float)
           _ui.print " = #{@value}"
+        elsif @value.is_a?(Integer)
+          _ui.print " = 0x#{@value.to_s(16)} = #{@value}"
         elsif @value.is_a?(Symbol)
           _ui.print " = #{@value}"
         elsif @value.is_a?(String)
@@ -109,7 +111,8 @@ module Kaitai::Struct::Visualizer
             v = @value.encode('UTF-8')
             s = v.inspect[0, max_len]
           when :hex
-            s = first_n_bytes_dump(@value, max_len / 3 + 1)
+            s = first_n_bytes_dump(@value, (max_len - 2) / 3 + 1)
+            s = "[#{s}]"
           else
             raise "Invalid str_mode: #{@str_mode.inspect}"
           end
@@ -140,7 +143,9 @@ module Kaitai::Struct::Visualizer
         i += 1
         break if i >= n
       end
-      r
+
+      # remove last space left over
+      r[0..-2] 
     end
 
     # Empirically detects a mode that would be best to show a designated string
