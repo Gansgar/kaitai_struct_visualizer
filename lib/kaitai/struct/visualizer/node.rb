@@ -91,8 +91,10 @@ module Kaitai::Struct::Visualizer
       pos = 2 * level + 4 + @id.length
 
       if open? || !openable?
-        if @value.is_a?(Float) || @value.is_a?(Integer)
+        if @value.is_a?(Float)
           print " = #{@value}"
+        elsif @value.is_a?(Integer)
+          print " = 0x#{@value.to_s(16)} = #{@value}"
         elsif @value.is_a?(Symbol)
           print " = #{@value}"
         elsif @value.is_a?(String)
