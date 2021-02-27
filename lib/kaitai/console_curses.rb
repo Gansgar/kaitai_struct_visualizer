@@ -135,6 +135,10 @@ module Kaitai
     KEY_MAP = {
       9 => :tab,
       10 => :enter,
+      'k' => :up_arrow,
+      'j' => :down_arrow,
+      'h' => :left_arrow,
+      'l' => :right_arrow,
       Curses::Key::UP => :up_arrow,
       Curses::Key::DOWN => :down_arrow,
       Curses::Key::LEFT => :left_arrow,
